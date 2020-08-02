@@ -1,0 +1,64 @@
+{% extends 'Bus/layout.html' %}
+{% block title %} Book | Dé Bus {% endblock %}
+
+{% block body %}
+  <div id="error"></div>
+                <div class="title-top">
+                    <h1>Book Now.</h1>
+                    <h4>Your Safe Ride.</h4>
+                </div>
+            <form>
+                <label class="label" for="from" style="color: aliceblue;">From:</label>
+                <div>
+                    <select name="from" id="from" required>
+                        <option disabled selected value> -- select -- </option>
+                        <option value="New York">New York</option>
+                        <option value="San Francisco">San Francisco</option>
+                        <option value="Chicago">Chicago</option>
+                        <option value="Washington D.C.">Washington D.C.</option>
+                        <option value="Los Angeles">Los Angeles</option>
+                        <option value="Denver">Denver</option>
+                        <option value="Seattle">Seattle</option>
+                        <option value="Boston">Boston</option>
+                        <option value="San Deigo">San Deigo</option>
+                        <option value="Austin">Austin</option>
+                        <option value="Houston">Houston</option>
+                        <option value="San Antonio">San Antonio</option>
+                        <option value="Dallas">Dallas</option>
+                        <option value="Detroit">Detroit</option>
+                        <option value="San Jose">San Jose</option>
+                        <option value="Portland">Portland</option>
+                        <option value="Miami">Miami</option>
+                    </select>
+                </div>
+                <label class="label" for="to" style="color: aliceblue;">To:</label>
+                <div>
+                    <select name="to" id="to" required>
+                        <option disabled selected value> -- select -- </option>
+                        <option value="New York">New York</option>
+                        <option value="San Francisco">San Francisco</option>
+                        <option value="Chicago">Chicago</option>
+                        <option value="Washington D.C.">Washington D.C.</option>
+                        <option value="Los Angeles">Los Angeles</option>
+                        <option value="Denver">Denver</option>
+                        <option value="Seattle">Seattle</option>
+                        <option value="Boston">Boston</option>
+                        <option value="San Deigo">San Deigo</option>
+                        <option value="Austin">Austin</option>
+                        <option value="Houston">Houston</option>
+                        <option value="San Antonio">San Antonio</option>
+                        <option value="Dallas">Dallas</option>
+                        <option value="Detroit">Detroit</option>
+                        <option value="San Jose">San Jose</option>
+                        <option value="Portland">Portland</option>
+                        <option value="Miami">Miami</option>
+                    </select>
+                </div>
+                <input type="submit" value="Next" id="routes" class="btn btn-warning" style="background-color: darkorange; color: white;" >
+            </form>
+                
+            <div id="date"></div>
+            <div id="timing"></div>
+
+{% endblock %}
+

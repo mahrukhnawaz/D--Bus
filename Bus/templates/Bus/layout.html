@@ -1,0 +1,82 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %} {% endblock %}</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <link rel="icon" type="image/png" href="/static/Bus/icon.png"/>
+        <link href="{% static 'Bus/style.css' %}" rel="stylesheet">
+        {% block script %} {% endblock %}
+    </head>
+    <body>
+
+    <!-- Nav Bar-->
+        
+    <nav class="navbar navbar-expand-lg  border">
+        <div class="container">
+            <a class="navbar-brand" href="/"><img src="/static/Bus/icon.png" height="50 px" alt="Logo image" style="margin-right: 10px;"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse"  id="navbarText">
+            <ul class="navbar-nav mr-auto" id="ull">
+                {% if not user.is_authenticated %}
+                    <li> <a class="nav-link" href="/"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+                    <li> <a class="nav-link" href="/login"><i class="fa fa-file-text" aria-hidden="true"></i>Login</a></li>
+                    
+                    
+                    <li>
+                    <a class="nav-link" href="/register"><i class="fa fa-sticky-note" aria-hidden="true"></i>Register </a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a class="nav-link" href="#"><i class="fa fa-sticky-note" aria-hidden="true"></i>{{user.username}}</a>
+                    </li>
+                    <li> <a class="nav-link" href="/"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+                    <li>
+                    <a class="nav-link" href="/logout"><i class="fa fa-sticky-note" aria-hidden="true"></i>Logout</a>
+                    </li>
+                    <li>
+                    <a class="nav-link"  href="/bookPage"><i class="fa fa-book" aria-hidden="true"></i>Make Booking</a>
+                    </li>
+                    <li>
+                    <a class="nav-link" id="myBookings" href="/myBookings"  ><i class="fa fa-linode" aria-hidden="true"></i>My Bookings</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="/history"><i class="fa fa-linode" aria-hidden="true"></i>History</a>
+                    </li>
+                {% endif %}
+                
+                </ul>
+                </div>
+        </div>
+    </nav>
+
+        <!-- End Nav Bar-->
+        {% block body %}
+
+        {% endblock %}
+        <!--Bottom Footer-->
+		<div class="bottom section-padding" >
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<div class="copyright">
+							<p>© <span>2020</span> <a href="#" class="transition">TheRider7660</a> All rights reserved.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+<!--Bottom Footer-->
+        <script type="text/javascript" src="{% static 'Bus/index.js' %}"></script>
+    </body>
+</html>

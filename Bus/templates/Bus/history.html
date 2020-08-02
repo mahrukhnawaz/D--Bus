@@ -1,0 +1,22 @@
+{% extends 'Bus/layout.html' %}
+
+{% block title %} History | Dé Bus {% endblock %}
+
+{% block body %}
+    <h1 style="text-align: center; color: darkorange; margin: 5%;">Your Previous Bookings!</h1>
+    {% for el in data %}
+     {% if today > el.date %}
+        <div id="card" style="color:azure; background-color: rgb(7, 17, 46); text-align: center;">
+            <div class="card-body">
+                    <strong>From:</strong> {{el.from}} <br>
+                    <strong>To:</strong> {{el.to}} <br>
+                    <strong>Departure:</strong> {{el.departure}} <br>
+                    <strong>Arival:</strong> {{el.arival}} <br>
+                    <strong>Booked Seats:</strong> {{el.seats}} <br>
+                    <strong>Date:</strong> {{el.date}} <br>
+                
+            </div>
+        </div>
+     {% endif %}
+    {% endfor %}
+{% endblock %}
